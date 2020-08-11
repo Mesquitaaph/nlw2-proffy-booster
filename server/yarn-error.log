@@ -1,0 +1,49 @@
+Arguments: 
+  C:\Program Files\nodejs\node.exe C:\Program Files (x86)\Yarn\bin\yarn.js add @types/cors
+
+PATH: 
+  C:\Program Files\Git\mingw64\bin;C:\Program Files\Git\usr\bin;C:\Users\Hertz\bin;C:\Python27;C:\Python27\Scripts;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\iCLS;C:\Program Files\Intel\Intel(R) Management Engine Components\iCLS;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0;C:\WINDOWS\System32\OpenSSH;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\IPT;C:\Program Files\Intel\Intel(R) Management Engine Components\IPT;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files\NVIDIA Corporation\NVIDIA NvDLISR;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0;C:\WINDOWS\System32\OpenSSH;C:\MinGW\bin;C:\Program Files\dotnet;C:\Program Files\Git\cmd;C:\ProgramData\chocolatey\bin;C:\Program Files\nodejs;C:\Program Files (x86)\Yarn\bin;C:\Program Files\Java\jdk1.8.0_211\bin;E:\Android\Sdk\emulator;E:\Android\Sdk\tools;E:\Android\Sdk\tools\bin;E:\Android\Sdk\platform-tools;C:\Users\Hertz\AppData\Local\Programs\Python\Python37-32\Scripts;C:\Users\Hertz\AppData\Local\Programs\Python\Python37-32;C:\Users\Hertz\AppData\Local\Microsoft\WindowsApps;C:\Users\Hertz\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\Hertz\AppData\Roaming\npm;C:\Users\Hertz\AppData\Local\Yarn\bin
+
+Yarn version: 
+  1.22.4
+
+Node version: 
+  12.18.2
+
+Platform: 
+  win32 x64
+
+Trace: 
+  Error: EPERM: operation not permitted, unlink 'E:\ComputaçãoEstudos\nlw2-proffy-booster\server\node_modules\sqlite3\lib\binding\napi-v3-win32-x64\node_sqlite3.node'
+
+npm manifest: 
+  {
+    "name": "server",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "scripts": {
+      "start": "tsnd --transpile-only --ignore-watch node_modules --respawn src/server.ts",
+      "knex:migrate": "knex --knexfile knexfile.ts migrate:latest",
+      "knex:migrate:rollback": "knex --knexfile knexfile.ts migrate:rollback"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "devDependencies": {
+      "@types/express": "^4.17.7",
+      "ts-node-dev": "^1.0.0-pre.56",
+      "typescript": "^3.9.7"
+    },
+    "dependencies": {
+      "express": "^4.17.1",
+      "knex": "^0.21.3",
+      "sqlite3": "^5.0.0"
+    }
+  }
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile
