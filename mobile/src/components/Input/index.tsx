@@ -9,7 +9,7 @@ interface InputProps extends TextInputProperties{
   password?: boolean;
 }
 
-const Input:React.FC<InputProps> = ({ password=false, placeholder, onChangeText, style, value }) => {
+const Input:React.FC<InputProps> = ({ password=false, placeholder, onChangeText, style }) => {
   const [isVisible, setIsVisible] = useState(false);
   const [isFocused, setIsFocused] = useState(false);
   
@@ -22,7 +22,7 @@ const Input:React.FC<InputProps> = ({ password=false, placeholder, onChangeText,
   }
 
   function handleUnFocusInputBar() {
-    setIsFocused(false);
+    return setIsFocused(false);
   }
 
   return (
@@ -32,12 +32,13 @@ const Input:React.FC<InputProps> = ({ password=false, placeholder, onChangeText,
         onFocus={handleFocusInputBar}
         onChangeText={onChangeText}
         secureTextEntry={!isVisible && password}
-        style={[styles.input, style]}
+        style={[styles.input, style]}   
       />
-      { isFocused && <View style={styles.leftBar}/>}
-
-      { <Text style={ value ? styles.placeholderTextFocus : styles.placeholderText}>{placeholder}</Text> }
+      { isFocused && <View style={styles.leftBar}/> }
       
+      
+      { <Text style={styles.placeholderTextFocus}>{placeholder}</Text> }
+
       { password &&
         <BorderlessButton onPress={handleToggleVisiblePassword} style={styles.iconButton}>
           { isVisible ? 

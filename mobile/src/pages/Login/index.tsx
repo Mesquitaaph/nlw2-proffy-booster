@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import { View, ImageBackground, Image, Text, CheckBox, KeyboardAvoidingView, Platform } from 'react-native';
 import { BorderlessButton, RectButton } from 'react-native-gesture-handler';
+import AsyncStorage from '@react-native-community/async-storage';
+import { useNavigation } from '@react-navigation/native';
 
 import giveClassesBgImage from '../../assets/images/give-classes-background.png';
 import logoImg from '../../assets/images/logo.png';
@@ -10,23 +12,42 @@ import Input from '../../components/Input';
 import styles from './styles';
 
 function Login() {
+  const { navigate, reset } = useNavigation();
+
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [rememberCheckBox, setRemeberCheckBox] = useState(false);
   
   function handleCreateAccount() {
-
+    navigate('CreateAccount')
   }
 
   function handleForgotPassword() {
     
   }
 
-  function handleLoginSubmit() {
+  function handleRememberMe() {
+    const rememberObject = {
+      rememberMe: true
+    }
+
+    return AsyncStorage.setItem('rememberMe', JSON.stringify(rememberObject))
+  }
+
+  async function handleLoginSubmit() {
+
+    if (rememberCheckBox) {
+      //await handleRememberMe();
+    }
+
     console.log({
       email,
-      password,
-      rememberCheckBox
+      password
+    })
+
+    reset({
+      index: 0,
+      routes: [{ name: 'Landing' }]
     })
   }
 

@@ -4,7 +4,6 @@ import { Ionicons } from '@expo/vector-icons';
 
 import TeacherList from '../pages/TeacherList';
 import Favorites from '../pages/Favorites';
-import { TabBarIOS } from 'react-native';
 
 const { Navigator, Screen } = createBottomTabNavigator();
 

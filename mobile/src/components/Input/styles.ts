@@ -10,11 +10,17 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: '#fff',
     height: 54,
-    paddingLeft: 24,
     borderColor: '#E6E6F0',
     borderWidth: 1,
+    paddingLeft: 24,
     paddingTop: 30,
-    paddingBottom: 10,
+    paddingBottom: 0,
+
+    fontFamily: 'Poppins_400Regular',
+    fontSize: 14,
+    lineHeight: 24,
+    color: '#6A6180',
+    
   },
 
   placeholderText: {
